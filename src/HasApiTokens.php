@@ -6,7 +6,7 @@ use DateTimeInterface;
 use Illuminate\Support\Str;
 
 /**
- * @template TTokenModel of \Illuminate\Database\Eloquent\Model&\Laravel\Sanctum\Contracts\HasAbilities
+ * @template TTokenModel of \Illuminate\Database\Eloquent\Model&\Laravel\Sanctum\Contracts\HasAbilities = \Laravel\Sanctum\PersonalAccessToken
  */
 trait HasApiTokens
 {
