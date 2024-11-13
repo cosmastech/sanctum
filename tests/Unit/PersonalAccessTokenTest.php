@@ -27,4 +27,20 @@ class PersonalAccessTokenTest extends TestCase
         $this->assertTrue($token->can('foo'));
         $this->assertTrue($token->can('bar'));
     }
+
+    public function test_extended_token_can_merge_parent_casts()
+    {
+        $extendedToken = new ExtendedPersonalAccessToken();
+
+        $this->assertArrayHasKey('is_impersonation', $extendedToken->getCasts());
+        $this->assertEquals('bool', $extendedToken->getCasts()['is_impersonation']);
+    }
+}
+
+class ExtendedPersonalAccessToken extends PersonalAccessToken
+{
+    protected function casts()
+    {
+        return parent::casts() + ['is_impersonation' => 'bool'];
+    }
 }
