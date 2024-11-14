@@ -9,7 +9,7 @@ class Sanctum
     /**
      * The personal access client model class name.
      *
-     * @var string
+     * @var class-string<\Illuminate\Database\Eloquent\Model>
      */
     public static $personalAccessTokenModel = 'Laravel\\Sanctum\\PersonalAccessToken';
 
