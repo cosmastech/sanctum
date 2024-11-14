@@ -8,20 +8,6 @@ use Laravel\Sanctum\Contracts\HasAbilities;
 class PersonalAccessToken extends Model implements HasAbilities
 {
     /**
-     * The attributes that should be cast to native types.
-     *
-     * @return array<string, string>
-     */
-    protected function casts()
-    {
-        return [
-            'abilities' => 'json',
-            'last_used_at' => 'datetime',
-            'expires_at' => 'datetime',
-        ];
-    }
-
-    /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
@@ -92,5 +78,19 @@ class PersonalAccessToken extends Model implements HasAbilities
     public function cant($ability)
     {
         return ! $this->can($ability);
+    }
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @return array<string, string>
+     */
+    protected function casts()
+    {
+        return [
+            'abilities' => 'json',
+            'last_used_at' => 'datetime',
+            'expires_at' => 'datetime',
+        ];
     }
 }
