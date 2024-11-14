@@ -75,7 +75,7 @@ class Sanctum
     /**
      * Set the personal access token model name.
      *
-     * @param  string  $model
+     * @param  class-string<\Illuminate\Database\Eloquent\Model>  $model
      * @return void
      */
     public static function usePersonalAccessTokenModel($model)
@@ -108,7 +108,7 @@ class Sanctum
     /**
      * Get the token model class name.
      *
-     * @return string
+     * @return class-string<\Illuminate\Database\Eloquent\Model>
      */
     public static function personalAccessTokenModel()
     {
